@@ -1,0 +1,11 @@
+repos:
+  - repo:<https://github.com/returntocorp/semgrep
+    rev: v1.23.0
+    hooks:
+  - id: semgrep
+      name: semgrep-secret-full-repo-scan
+      stages: ["commit"]
+      verbose: false
+      entry: semgrep scan --config p/secrets --error
+      pass_filenames: false
+      language: system
