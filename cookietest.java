@@ -26,7 +26,7 @@ public class CookieController {
     @RequestMapping(value = "/cookie4", method = "GET")
     public void explicitDisable(@RequestParam String value, HttpServletResponse response) {
         Cookie cookie = new Cookie("cookie", value);
-        cookie.setSecure(false);
+        cookie.setSecure(true);
         // ruleid: cookie-httponly-false
         cookie.setHttpOnly(false);
         response.addCookie(cookie);
